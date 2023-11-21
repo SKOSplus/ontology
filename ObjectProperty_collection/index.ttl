@@ -1,0 +1,9 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://ontology.skosplus.net/ObjectProperty_collection> a skos:Collection ;
+    rdfs:label "ObjectProperty Instances Collection" ;
+    rdfs:member <http://ontology.skosplus.net/member>,
+        <http://ontology.skosplus.net/scheme>,
+        <http://ontology.skosplus.net/semanticRelation> .
+

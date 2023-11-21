@@ -1,0 +1,7 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://ontology.skosplus.net/Ontology_collection> a skos:Collection ;
+    rdfs:label "Ontology Instances Collection" ;
+    rdfs:member <http://ontology.skosplus.net/> .
+

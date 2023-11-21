@@ -1,0 +1,43 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://ontology.skosplus.net/Class_collection> a skos:Collection ;
+    rdfs:label "Class Instances Collection" ;
+    rdfs:member <http://ontology.skosplus.net/Collection>,
+        <http://ontology.skosplus.net/Concept>,
+        <http://ontology.skosplus.net/ConceptScheme> .
+
+<http://ontology.skosplus.net/ObjectProperty_collection> a skos:Collection ;
+    rdfs:label "ObjectProperty Instances Collection" ;
+    rdfs:member <http://ontology.skosplus.net/member>,
+        <http://ontology.skosplus.net/scheme>,
+        <http://ontology.skosplus.net/semanticRelation> .
+
+<http://ontology.skosplus.net/Ontology_collection> a skos:Collection ;
+    rdfs:label "Ontology Instances Collection" ;
+    rdfs:member <http://ontology.skosplus.net/> .
+
+<http://ontology.skosplus.net/Collection> a owl:Class ;
+    rdfs:label "SKOSplus Collection"@en .
+
+<http://ontology.skosplus.net/Concept> a owl:Class ;
+    rdfs:label "SKOSplus Concept"@en .
+
+<http://ontology.skosplus.net/ConceptScheme> a owl:Class ;
+    rdfs:label "SKOS Concept Scheme"@en .
+
+<http://ontology.skosplus.net/member> a owl:ObjectProperty ;
+    rdfs:label "<member properties>"@en .
+
+<http://ontology.skosplus.net/scheme> a owl:ObjectProperty ;
+    rdfs:label "<scheme properties>"@en .
+
+<http://ontology.skosplus.net/semanticRelation> a owl:ObjectProperty ;
+    rdfs:label "<semantic relation properties>"@en .
+
+<http://ontology.skosplus.net/> a owl:Ontology ;
+    rdfs:label "SKOSplus ontology"@en ;
+    owl:imports <http://www.w3.org/2004/02/skos/core> ;
+    owl:versionIRI <http://ontology.skosplus.net/> .
+
