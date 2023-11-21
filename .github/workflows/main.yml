@@ -18,7 +18,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
     with:
-      version: v016
+      version: v017dev
       rdffilepath: skosplus.owl
       docpath: docs
       prefixns: http://ontology.skosplus.net/
