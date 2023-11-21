@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2004/02/skos/core" uri="file:/C:/Users/flori/Downloads/skos%20(3).rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1700577670429" name="http://www.semanticweb.org/flori/ontologies/2023/10/untitled-ontology-42" uri="skosplus.owl"/>
+    </group>
+</catalog>
