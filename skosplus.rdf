@@ -1,84 +1,155 @@
-@prefix : <http://ontology.skosplus.net/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://ontology.skosplus.net/> .
-
-<http://ontology.skosplus.net/> rdf:type owl:Ontology ;
-                                 owl:versionIRI <http://ontology.skosplus.net/> ;
-                                 owl:imports <http://www.w3.org/2004/02/skos/core> ;
-                                 rdfs:label "SKOSplus ontology"@en .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://ontology.skosplus.net/member
-:member rdf:type owl:ObjectProperty ;
-        rdfs:label "<member properties>"@en .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.skosplus.net/"
+     xml:base="http://ontology.skosplus.net/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://ontology.skosplus.net/">
+        <owl:versionIRI rdf:resource="http://ontology.skosplus.net/"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">SKOSplus ontology</rdfs:label>
+    </owl:Ontology>
+    
 
 
-###  http://ontology.skosplus.net/scheme
-:scheme rdf:type owl:ObjectProperty ;
-        rdfs:label "<scheme properties>"@en .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://ontology.skosplus.net/semanticRelation
-:semanticRelation rdf:type owl:ObjectProperty ;
-                  rdfs:label "<semantic relation properties>"@en .
+    <!-- http://ontology.skosplus.net/member -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.skosplus.net/member">
+        <rdfs:label xml:lang="en">&lt;member properties&gt;</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#hasTopConcept
-<http://www.w3.org/2004/02/skos/core#hasTopConcept> rdfs:subPropertyOf :scheme .
+    <!-- http://ontology.skosplus.net/scheme -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.skosplus.net/scheme">
+        <rdfs:label xml:lang="en">&lt;scheme properties&gt;</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#inScheme
-<http://www.w3.org/2004/02/skos/core#inScheme> rdfs:subPropertyOf :scheme .
+    <!-- http://ontology.skosplus.net/semanticRelation -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.skosplus.net/semanticRelation">
+        <rdfs:label xml:lang="en">&lt;semantic relation properties&gt;</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#member
-<http://www.w3.org/2004/02/skos/core#member> rdfs:subPropertyOf :member .
+    <!-- http://www.w3.org/2004/02/skos/core#hasTopConcept -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.skosplus.net/scheme"/>
+    </rdf:Description>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#memberList
-<http://www.w3.org/2004/02/skos/core#memberList> rdfs:subPropertyOf :member .
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.skosplus.net/scheme"/>
+    </rdf:Description>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#semanticRelation
-<http://www.w3.org/2004/02/skos/core#semanticRelation> rdfs:subPropertyOf :semanticRelation .
+    <!-- http://www.w3.org/2004/02/skos/core#member -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#member">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.skosplus.net/member"/>
+    </rdf:Description>
+    
 
 
-#################################################################
-#    Classes
-#################################################################
+    <!-- http://www.w3.org/2004/02/skos/core#memberList -->
 
-###  http://ontology.skosplus.net/Collection
-:Collection rdf:type owl:Class ;
-            rdfs:label "SKOSplus Collection"@en .
-
-
-###  http://ontology.skosplus.net/Concept
-:Concept rdf:type owl:Class ;
-         rdfs:label "SKOSplus Concept"@en .
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#memberList">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.skosplus.net/member"/>
+    </rdf:Description>
+    
 
 
-###  http://ontology.skosplus.net/ConceptScheme
-:ConceptScheme rdf:type owl:Class ;
-               rdfs:label "SKOS Concept Scheme"@en .
+    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#semanticRelation">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.skosplus.net/semanticRelation"/>
+    </rdf:Description>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#Collection
-<http://www.w3.org/2004/02/skos/core#Collection> rdfs:subClassOf :Collection .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#Concept
-<http://www.w3.org/2004/02/skos/core#Concept> rdfs:subClassOf :Concept .
+    <!-- http://ontology.skosplus.net/Collection -->
+
+    <owl:Class rdf:about="http://ontology.skosplus.net/Collection">
+        <rdfs:label xml:lang="en">SKOSplus Collection</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#ConceptScheme
-<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdfs:subClassOf :ConceptScheme .
+    <!-- http://ontology.skosplus.net/Concept -->
+
+    <owl:Class rdf:about="http://ontology.skosplus.net/Concept">
+        <rdfs:label xml:lang="en">SKOSplus Concept</rdfs:label>
+    </owl:Class>
+    
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+    <!-- http://ontology.skosplus.net/ConceptScheme -->
+
+    <owl:Class rdf:about="http://ontology.skosplus.net/ConceptScheme">
+        <rdfs:label xml:lang="en">SKOS Concept Scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Collection -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection">
+        <rdfs:subClassOf rdf:resource="http://ontology.skosplus.net/Collection"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:subClassOf rdf:resource="http://ontology.skosplus.net/Concept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <rdfs:subClassOf rdf:resource="http://ontology.skosplus.net/ConceptScheme"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
