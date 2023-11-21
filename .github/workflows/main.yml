@@ -19,7 +19,7 @@ jobs:
     uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
     with:
       version: v017dev
-      rdffilepath: skosplus.owl
+      rdffilepath: skosplus.rdf
       docpath: docs
       prefixns: http://ontology.skosplus.net/
       prefixnsshort: skosp
