@@ -1,105 +1,84 @@
-<?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://ontology.skosplus.net/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://ontology.skosplus.net/"
-     versionIRI="http://ontology.skosplus.net/">
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://www.w3.org/2004/02/skos/core</Import>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal xml:lang="en">SKOSplus ontology</Literal>
-    </Annotation>
-    <Declaration>
-        <Class IRI="Collection"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Concept"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ConceptScheme"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="member"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="scheme"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="semanticRelation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="http://www.w3.org/2004/02/skos/core#Collection"/>
-        <Class IRI="Collection"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <Class IRI="Concept"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <Class IRI="ConceptScheme"/>
-    </SubClassOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#hasTopConcept"/>
-        <ObjectProperty IRI="scheme"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#inScheme"/>
-        <ObjectProperty IRI="scheme"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#member"/>
-        <ObjectProperty IRI="member"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#memberList"/>
-        <ObjectProperty IRI="member"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
-        <ObjectProperty IRI="semanticRelation"/>
-    </SubObjectPropertyOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Collection</IRI>
-        <Literal xml:lang="en">SKOSplus Collection</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Concept</IRI>
-        <Literal xml:lang="en">SKOSplus Concept</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ConceptScheme</IRI>
-        <Literal xml:lang="en">SKOS Concept Scheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>member</IRI>
-        <Literal xml:lang="en">&lt;member properties&gt;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>scheme</IRI>
-        <Literal xml:lang="en">&lt;scheme properties&gt;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>semanticRelation</IRI>
-        <Literal xml:lang="en">&lt;semantic relation properties&gt;</Literal>
-    </AnnotationAssertion>
-</Ontology>
+@prefix : <http://ontology.skosplus.net/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology.skosplus.net/> .
+
+<http://ontology.skosplus.net/> rdf:type owl:Ontology ;
+                                 owl:versionIRI <http://ontology.skosplus.net/> ;
+                                 owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                 rdfs:label "SKOSplus ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology.skosplus.net/member
+:member rdf:type owl:ObjectProperty ;
+        rdfs:label "<member properties>"@en .
 
 
+###  http://ontology.skosplus.net/scheme
+:scheme rdf:type owl:ObjectProperty ;
+        rdfs:label "<scheme properties>"@en .
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
+###  http://ontology.skosplus.net/semanticRelation
+:semanticRelation rdf:type owl:ObjectProperty ;
+                  rdfs:label "<semantic relation properties>"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#hasTopConcept
+<http://www.w3.org/2004/02/skos/core#hasTopConcept> rdfs:subPropertyOf :scheme .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdfs:subPropertyOf :scheme .
+
+
+###  http://www.w3.org/2004/02/skos/core#member
+<http://www.w3.org/2004/02/skos/core#member> rdfs:subPropertyOf :member .
+
+
+###  http://www.w3.org/2004/02/skos/core#memberList
+<http://www.w3.org/2004/02/skos/core#memberList> rdfs:subPropertyOf :member .
+
+
+###  http://www.w3.org/2004/02/skos/core#semanticRelation
+<http://www.w3.org/2004/02/skos/core#semanticRelation> rdfs:subPropertyOf :semanticRelation .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology.skosplus.net/Collection
+:Collection rdf:type owl:Class ;
+            rdfs:label "SKOSplus Collection"@en .
+
+
+###  http://ontology.skosplus.net/Concept
+:Concept rdf:type owl:Class ;
+         rdfs:label "SKOSplus Concept"@en .
+
+
+###  http://ontology.skosplus.net/ConceptScheme
+:ConceptScheme rdf:type owl:Class ;
+               rdfs:label "SKOS Concept Scheme"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+<http://www.w3.org/2004/02/skos/core#Collection> rdfs:subClassOf :Collection .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdfs:subClassOf :Concept .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdfs:subClassOf :ConceptScheme .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
